@@ -18,7 +18,7 @@ server/.env
 *.log
 
 # Environment variables
-.env.development
+.env
 
 # macOS
 .DS_Store

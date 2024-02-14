@@ -6,7 +6,9 @@ import { useSelector } from 'react-redux';
 
 import axios from 'axios';
 
-const BACKEND = "http://localhost:4000";
+// const BACKEND = "http://localhost:4000";
+
+const BACKEND = import.meta.env.VITE_REACT_APP_API_URL;
 
 export default function Home() {
 
@@ -16,9 +18,13 @@ export default function Home() {
 
     const [loading, setLoading] = useState(false);
 
+
     async function getPosts() {
 
         try {
+
+            console.log("AA GYA JI: ", BACKEND);
+
 
             setLoading(true);
 
