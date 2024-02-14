@@ -1,0 +1,243 @@
+/* Profile Container */
+.my-profile {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 15px;
+}
+
+/* Photo Changer Form */
+.photo-changer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    background-color: #333;
+    /* Dark background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Photo Selector Input */
+.selector {
+    background-color: #fff;
+    padding: 15px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Close Button Container */
+.close-btn-container {
+    width: 100%;
+    text-align: right;
+}
+
+/* Close Button Style */
+.close-btn {
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: tomato;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* Change Button Style */
+.change-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: tomato;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* User Section */
+.user {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    padding-bottom: 80px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 15px;
+}
+
+/* User Bio Section */
+.my-bio {
+    width: 100%;
+    padding: 15px;
+    background-color: #0e0f16;
+    color: white;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 15px 15px;
+    /* Rounded bottom corners */
+}
+
+/* Photo Box */
+.photo-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Avatar Image Style */
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Change Photo Button */
+.change-photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: black;
+    color: #fff;
+    padding: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* User Info Section */
+.user-info {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* User Name and Post Count Styles */
+.my-name,
+.total-post {
+    font-size: 1rem;
+    color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid tomato;
+    text-decoration: none;
+}
+
+/* Edit, Create, Logout Links */
+.edit,
+.create-logo,
+.logout {
+    font-size: 1rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.edit,
+.create-logo {
+    background-color: tomato;
+}
+
+.logout {
+    background-color: #333;
+}
+
+/* Hover States */
+.logout:hover,
+.change-photo:hover {
+    background-color: #555;
+}
+
+.my-posts {
+    flex: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .my-profile {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .my-posts {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .my-profile {
+        padding: 10px;
+    }
+
+    .my-posts {
+        padding: 10px;
+    }
+
+    .user-info {
+        max-width: 100%;
+    }
+
+    .my-name,
+    .total-post,
+    .edit,
+    .create-logo,
+    .logout {
+        width: 100%;
+    }
+}

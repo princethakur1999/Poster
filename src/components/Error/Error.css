@@ -1,0 +1,21 @@
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error-content {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid tomato;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+
+
+.error-message {
+    font-size: 16px;
+    color: tomato;
+}

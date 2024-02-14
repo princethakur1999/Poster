@@ -1,0 +1,115 @@
+.footer {
+    width: 100%;
+    background-color: #0e0f16;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+hr {
+    height: 1px;
+    padding-block: 2px;
+    background-color: white;
+    border: none;
+}
+
+.footer-content {
+    max-width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-section {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email {
+    justify-content: center;
+}
+
+.links {
+    justify-content: space-evenly;
+}
+
+.link {
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+/* Facebook */
+.fb:hover {
+    color: #1877f2;
+    /* Facebook blue */
+}
+
+/* Whatsapp */
+.wa:hover {
+    color: #25D366;
+    /* Whatsapp green */
+}
+
+/* Instagram */
+.it:hover {
+    color: #e4405f;
+    /* Instagram pink */
+}
+
+/* Twitter */
+.tt:hover {
+    color: #1da1f2;
+    /* Twitter blue */
+}
+
+/* Linkedin */
+.ld:hover {
+    color: #0077b5;
+    /* Linkedin blue */
+}
+
+/* Github */
+.gh:hover {
+    color: #171515;
+    /* Github black */
+}
+
+/* Leetcode */
+.lc:hover {
+    color: #FFA116;
+    /* Leetcode orange */
+}
+
+
+.footer-section p {
+    font-size: 1rem;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+@media (max-width: 840px) {
+
+    .footer-content {
+        flex-direction: column;
+    }
+}

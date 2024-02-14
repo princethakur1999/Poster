@@ -1,0 +1,121 @@
+import './Edit.css';
+
+
+import Error from './../../../components/Error/Error.jsx';
+
+import { useState } from "react";
+
+import { useNavigate } from 'react-router-dom';
+
+import axios from 'axios';
+
+import { toast } from 'react-hot-toast';
+
+
+
+const BACKEND = "http://localhost:4000";
+
+
+
+export default function Edit() {
+
+    const navigate = useNavigate();
+
+    const [user, setUser] = useState({ username: "", bio: "" });
+
+    const token = localStorage.getItem("token");
+
+    const [loading, setLoading] = useState(false);
+
+
+    function changeHandler(event) {
+
+
+        const { name, value } = event.target;
+
+        setUser((prev) => ({ ...prev, [name]: value }));
+
+    }
+
+    async function submitHandler(event) {
+
+        event.preventDefault();
+
+
+        try {
+
+            setLoading(true);
+
+            const formData = new FormData();
+
+            formData.append("username", user.username);
+
+            formData.append("bio", user.bio);
+
+
+            const me = JSON.parse(localStorage.getItem("me"));
+
+            let id = me.userId;
+
+            const response = await axios.post(`${BACKEND}/edit-profile/${id}`, formData);
+
+            if (!response.data.success) {
+
+                throw Error(response.data.message);
+            }
+
+            toast.success("Profile edited successfully");
+
+            navigate("/profile");
+
+        } catch (e) {
+
+            console.log(e);
+
+            toast.error(e.message);
+        }
+        finally {
+
+            setLoading(false);
+        }
+    }
+
+    if (!token) {
+
+        return <Error />;
+    }
+
+    return (
+
+        <form onSubmit={submitHandler}>
+
+            <h2>Edit</h2>
+
+            <input
+                type="text"
+                name="username"
+                onChange={changeHandler}
+                value={user.username}
+                placeholder="Username"
+            />
+
+
+            <input
+                type="text"
+                name="bio"
+                onChange={changeHandler}
+                value={user.bio}
+                placeholder="Bio"
+            />
+
+
+            <button className='update-btn'>
+                {
+                    loading ? 'Processing...' : ' Save'
+                }
+            </button>
+
+
+        </form>
+    )
+}

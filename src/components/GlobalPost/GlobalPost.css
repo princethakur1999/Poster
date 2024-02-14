@@ -1,0 +1,85 @@
+/* GlobalPost.css */
+
+.global-post {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    position: relative;
+    border: 1px solid tomato;
+}
+
+.ud {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: tomato;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.g-username,
+.g-date {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.g-content {
+    width: 100%;
+    color: #333;
+    font-size: 1.4rem;
+    text-align: left;
+    margin: 0;
+    padding: 10px;
+}
+
+.g-username {
+    text-decoration: none;
+}
+
+.g-likes,
+.g-like-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.g-likes {
+    bottom: 70px;
+    left: 10px;
+}
+
+.g-like-btn {
+    bottom: 30px;
+    left: 10px;
+}
+
+.g-img {
+    height: 360px;
+    width: auto;
+    object-fit: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

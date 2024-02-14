@@ -1,0 +1,80 @@
+.navigation {
+    width: 100%;
+    min-height: 64px;
+    background-color: tomato;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 10%;
+    background-color: white;
+    color: tomato;
+    font-size: 2rem;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0 50px 0 0;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 8px;
+}
+
+.nav-item {
+    border: 1px solid white;
+    width: 100px;
+}
+
+.nav-item,
+.profile-logo {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.nav-item:hover,
+.profile-logo:hover {
+    background-color: #333;
+}
+
+
+.profile-logo {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .nav-items {
+        width: 100%;
+    }
+
+    .logo {
+        width: 60%;
+        padding-inline: 20px;
+    }
+}

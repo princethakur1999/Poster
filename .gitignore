@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+
+# Vite
+dist/
+
+# Build files
+build/
+out/
+
+# Backend
+server/node_modules/
+server/.env
+
+# Logs
+*.log
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
