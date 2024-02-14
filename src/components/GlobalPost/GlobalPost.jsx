@@ -36,8 +36,6 @@ export default function GlobalPost({ post, username }) {
 
             <img className='g-img' src={post.image} alt="postpic" />
 
-            <p className='g-likes'>{post.likes || 0}</p>
-
             <p className='g-like-btn'>
                 <AiFillLike />
             </p>

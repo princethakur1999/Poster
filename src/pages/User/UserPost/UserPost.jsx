@@ -29,8 +29,6 @@ export default function UserPost({ post, username }) {
 
             <p className='date'>{formattedDate}</p>
 
-            <div className='likes'>{post.likes || 0}</div>
-
         </div>
     );
 }
