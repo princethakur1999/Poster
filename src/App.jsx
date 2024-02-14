@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
-import ForgotPassword from './components/ForgotPassword/ForgotPassword.jsX';
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword.jsx";
 import Home from './pages/Home/Home.jsx';
 import Creator from './pages/Creator/Creator.jsx';
 import Profile from './pages/Profile/Profile.jsx';
