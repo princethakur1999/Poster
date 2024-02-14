@@ -16,8 +16,6 @@ import Footer from './components/Footer/Footer.jsx';
 import { Toaster } from 'react-hot-toast';
 
 
-
-
 export default function App() {
 
 
