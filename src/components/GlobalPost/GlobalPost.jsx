@@ -1,7 +1,5 @@
 import './GlobalPost.css';
 
-import { AiFillLike } from "react-icons/ai";
-
 import { Link } from 'react-router-dom';
 
 
@@ -35,10 +33,6 @@ export default function GlobalPost({ post, username }) {
 
 
             <img className='g-img' src={post.image} alt="postpic" />
-
-            <p className='g-like-btn'>
-                <AiFillLike />
-            </p>
         </div>
     );
 }
