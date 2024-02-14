@@ -8,7 +8,10 @@ import axios from "axios";
 
 import { toast } from 'react-hot-toast';
 
-const BACKEND = "http://localhost:4000";
+// const BACKEND = "http://localhost:4000";
+
+const BACKEND = import.meta.env.VITE_REACT_APP_API_URL;
+
 
 
 export default function ForgotPassword() {
