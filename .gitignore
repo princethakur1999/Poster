@@ -1,8 +1,10 @@
 # Node.js
 node_modules/
 
+
 # Vite
 dist/
+
 
 # Build files
 build/
@@ -16,10 +18,7 @@ server/.env
 *.log
 
 # Environment variables
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.development
 
 # macOS
 .DS_Store
