@@ -29,7 +29,7 @@ export default function Login() {
     const dispatch = useDispatch();
 
 
-    const [loginDetails, setLoginDetails] = useState({ username: "", password: "" });
+    const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
 
     const [loading, setLoading] = useState(false);
 
@@ -107,10 +107,10 @@ export default function Login() {
 
                 <input
                     type="text"
-                    placeholder='Username'
-                    id="username"
-                    name="username"
-                    value={loginDetails.username}
+                    placeholder='Email'
+                    id="email"
+                    name="email"
+                    value={loginDetails.email}
                     onChange={changeHandler}
                 />
 

@@ -92,7 +92,7 @@ export default function Edit() {
 
         <form onSubmit={submitHandler}>
 
-            <h2>Edit</h2>
+            <h2>Change</h2>
 
             <input
                 type="text"
@@ -114,7 +114,7 @@ export default function Edit() {
 
             <button className='update-btn'>
                 {
-                    loading ? 'Processing...' : ' Save'
+                    loading ? 'Processing...' : 'Change'
                 }
             </button>
 

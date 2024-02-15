@@ -6,6 +6,10 @@ import jwt from 'jsonwebtoken';
 
 import { v2 as cloudinary } from 'cloudinary';
 
+import sendEmail from './../utils/email.js';
+
+import generateSignupEmailBody from './../templates/email.js';
+
 export async function otp(req, res) {
 
 
@@ -148,6 +152,10 @@ export async function signup(req, res) {
         await user.save();
 
 
+        const body = generateSignupEmailBody(username);
+
+        sendEmail(email, 'Sign Up Confirmation', body);
+
 
         // Return response
         return res.status(200).json({
@@ -175,22 +183,22 @@ export async function login(req, res) {
 
     try {
 
-        const { username, password } = req.body;
+        const { email, password } = req.body;
 
-        console.log("username: ", username);
+        console.log("email: ", email);
         console.log("password: ", password);
 
 
-        if (!username || !password) {
+        if (!email || !password) {
 
             return res.status(400).json({
 
                 success: false,
-                message: "Please provide both username and password."
+                message: "Please provide both email and password."
             });
         }
 
-        let user = await User.findOne({ username }).populate("posts").exec();
+        let user = await User.findOne({ email }).populate("posts").exec();
 
 
         // If the user does not exist in the database
