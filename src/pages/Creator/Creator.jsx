@@ -94,7 +94,7 @@ export default function Creator() {
 
             <div className='creator'>
 
-                <form onSubmit={submitHandler}>
+                <form onSubmit={submitHandler} autocomplete="off">
 
                     <textarea
                         name='description'

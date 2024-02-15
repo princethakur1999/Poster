@@ -94,7 +94,7 @@ export default function Signup() {
 
                 <h2>Signup</h2>
 
-                <form onSubmit={submitHandler}>
+                <form onSubmit={submitHandler} autocomplete="off">
 
                     <input
                         type="text"

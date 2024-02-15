@@ -130,7 +130,7 @@ export default function ForgotPassword() {
 
             <h2>Forgot Password</h2>
 
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} autocomplete="off">
 
                 {
                     !otpSent && !emailVerified &&

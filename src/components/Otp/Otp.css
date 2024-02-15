@@ -1,9 +1,10 @@
 .otp-container {
     width: 100%;
-    min-height: 300px;
+    min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .otp-form {

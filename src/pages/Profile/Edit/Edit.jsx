@@ -90,7 +90,7 @@ export default function Edit() {
 
     return (
 
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} autocomplete="off">
 
             <h2>Change</h2>
 

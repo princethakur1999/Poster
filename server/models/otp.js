@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 
 import emailSneder from './../utils/email.js';
 
+import { generateOtpEmailBody } from './../templates/email.js';
+
 
 const optSchema = mongoose.Schema(
     {
@@ -28,8 +30,9 @@ async function sendVerificationEmail(email, otp) {
 
     try {
 
+        const body = generateOtpEmailBody(otp);
 
-        await emailSneder(email, "Verification", otp);
+        await emailSneder(email, "Poster", body);
 
     } catch (e) {
 

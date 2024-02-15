@@ -103,7 +103,7 @@ export default function Login() {
             <h2>Login</h2>
 
 
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} autocomplete="off">
 
                 <input
                     type="text"

@@ -80,10 +80,12 @@ export default function Otp() {
 
         <div className='otp-container'>
 
-            <form onSubmit={submitHandler} className='otp-form'>
+            <form onSubmit={submitHandler} className='otp-form' autocomplete="off">
+
+                <h2>OTP Verification</h2>
 
                 <input
-                    type="password"
+                    type="text"
                     placeholder='Enter OTP'
                     name='otp'
                     id='otp'

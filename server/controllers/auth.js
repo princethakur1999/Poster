@@ -8,7 +8,7 @@ import { v2 as cloudinary } from 'cloudinary';
 
 import sendEmail from './../utils/email.js';
 
-import generateSignupEmailBody from './../templates/email.js';
+import { generateSignupEmailBody } from './../templates/email.js';
 
 export async function otp(req, res) {
 
@@ -154,8 +154,7 @@ export async function signup(req, res) {
 
         const body = generateSignupEmailBody(username);
 
-        sendEmail(email, 'Sign Up Confirmation', body);
-
+        sendEmail(email, 'Signup Successful 🎁', body);
 
         // Return response
         return res.status(200).json({

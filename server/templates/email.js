@@ -1,7 +1,5 @@
 
-
-
-export default function generateSignupEmailBody(username) {
+export function generateSignupEmailBody(username) {
 
 
   return `
@@ -62,3 +60,31 @@ export default function generateSignupEmailBody(username) {
 
 
 
+
+export function generateOtpEmailBody(otp) {
+
+  return `
+
+    <div style="
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    ">
+      <h2 style="color: tomato; font-size: 24px; margin-bottom: 10px;">OTP</h2>
+
+      <p style="font-size: 18px; color: black;">
+        <span style="font-weight: bold; font-size: 20px;">${otp}</span>
+      </p>
+
+      <p style="font-size: 14px; color: #6c757d; margin-top: 15px;">
+        Note: This code is valid for 5 minutes.
+      </p>
+
+    </div>
+  `;
+}
