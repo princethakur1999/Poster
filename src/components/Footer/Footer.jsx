@@ -20,31 +20,31 @@ export default function Footer() {
 
                 <div className='footer-section links'>
 
-                    <Link to="">
+                    <Link to="https://www.facebook.com/profile.php?id=100005320754965">
                         <FaFacebook className='link fb' />
                     </Link>
 
-                    <Link to="">
+                    <Link to="https://wa.link/yo3dgy">
                         <FaWhatsapp className='link wa' />
                     </Link>
 
-                    <Link to="">
+                    <Link to="https://www.instagram.com/setu__13/">
                         <FaInstagram className='link it' />
                     </Link>
 
-                    <Link to="">
+                    <Link to="https://twitter.com/Princesetu13">
                         <FaTwitter className='link tt' />
                     </Link>
 
-                    <Link to="">
+                    <Link to="https://www.linkedin.com/in/princethakur1999/">
                         <FaLinkedin className='link ld' />
                     </Link>
 
-                    <Link to="">
+                    <Link to="https://github.com/princethakur1999">
                         <FaGithub className='link gh' />
                     </Link>
 
-                    <Link to="">
+                    <Link to="https://leetcode.com/princethakur1999/">
                         <SiLeetcode className='link lc' />
                     </Link>
 
