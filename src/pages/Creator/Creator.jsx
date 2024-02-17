@@ -98,7 +98,7 @@ export default function Creator() {
 
                     <textarea
                         name='description'
-                        placeholder='Description...'
+                        placeholder='Write something here...'
                         cols='30'
                         rows='10'
                         value={post.description}

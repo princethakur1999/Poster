@@ -92,7 +92,7 @@ export default function Edit() {
 
         <form onSubmit={submitHandler} autocomplete="off">
 
-            <h2>Change</h2>
+            <h2>Add New</h2>
 
             <input
                 type="text"
@@ -116,7 +116,7 @@ export default function Edit() {
 
             <button className='update-btn'>
                 {
-                    loading ? 'Processing...' : 'Change'
+                    loading ? 'Processing...' : 'Add'
                 }
             </button>
 
