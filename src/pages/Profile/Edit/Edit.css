@@ -15,6 +15,15 @@ input {
     box-sizing: border-box;
 }
 
+
+.required-message {
+    color: slategray; 
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-align: center;
+}
+
 button {
     background-color: tomato;
     color: white;

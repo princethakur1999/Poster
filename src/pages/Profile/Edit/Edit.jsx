@@ -96,7 +96,7 @@ export default function Edit() {
 
             <input
                 type="text"
-                name="username"
+                name="Name"
                 onChange={changeHandler}
                 value={user.username}
                 placeholder="Username"
@@ -105,11 +105,13 @@ export default function Edit() {
 
             <input
                 type="text"
-                name="bio"
+                name="Bio"
                 onChange={changeHandler}
                 value={user.bio}
                 placeholder="Bio"
             />
+
+            <p className="required-message">All fields are required.</p>
 
 
             <button className='update-btn'>
