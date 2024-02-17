@@ -156,6 +156,10 @@
     text-decoration: none;
 }
 
+.logout{
+    cursor: pointer;
+}
+
 .edit,
 .create-logo {
     background-color: tomato;
