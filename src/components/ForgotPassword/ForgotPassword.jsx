@@ -128,7 +128,7 @@ export default function ForgotPassword() {
 
         <div className="forgotPassword">
 
-            <h2>Forgot Password</h2>
+            <h2>Forgot Password?</h2>
 
             <form onSubmit={submitHandler} autocomplete="off">
 
@@ -138,7 +138,7 @@ export default function ForgotPassword() {
                         <>
                             <input
                                 type="text"
-                                placeholder="Email"
+                                placeholder="Enter Your Email"
                                 name="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}

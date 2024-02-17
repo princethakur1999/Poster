@@ -14,7 +14,7 @@
 }
 
 .signup h2 {
-    color: #333;
+    color: tomato;
     font-size: 2rem;
     margin-bottom: 20px;
 }
@@ -42,6 +42,25 @@ input:focus {
     background-color: #e0e0e0;
 }
 
+.custom-file-input-label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+    color: grey;
+}
+
+.custom-file-input-label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+
 .photo {
     color: #333;
     height: 40px;
@@ -50,6 +69,16 @@ input:focus {
     outline: none;
     width: 100%;
 }
+
+
+.required-message {
+    color: slategray; 
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-align: center;
+}
+
 
 .signupBtn {
     width: 100%;

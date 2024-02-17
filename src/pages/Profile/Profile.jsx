@@ -226,15 +226,17 @@ export default function Profile() {
 
             <div className='my-posts'>
                 {
-                     user?.posts?.length > 0 ?
+                     user?.posts?.length > 0 &&
                         (
                             user.posts.map((post) => <Post key={post._id} post={post} username={user.username} />)
                         )
-                        :
-                        (
-                          <p className="no-posts">No posts found!</p>
-                        )
                 }
+
+                {
+                   !loading && user?.posts?.length === 0 &&
+                   <p>No posts found.</p>
+                }
+
             </div>
         </div>
     );

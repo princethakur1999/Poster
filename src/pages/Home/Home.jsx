@@ -84,7 +84,10 @@ export default function Home() {
                             }
 
                             {
+                               !loading && 
+                               (
                                 posts && posts.length >= 0 ? null : <p>No posts found.</p>
+                               )
                             }
 
                         </div>

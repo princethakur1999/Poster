@@ -98,7 +98,7 @@ export default function Signup() {
 
                     <input
                         type="text"
-                        placeholder="Username"
+                        placeholder="Name"
                         name="username"
                         id="username"
                         value={signupDetails.username || ''}
@@ -115,14 +115,19 @@ export default function Signup() {
                         onChange={changeHandler}
                     />
 
-                    <input
-                        className='photo'
-                        type='file'
-                        placeholder='Photo'
-                        name='photo'
-                        onChange={changeHandler}
-                    />
+                    <label htmlFor="fileInput" className="custom-file-input-label">
+                        {
+                            signupDetails.photo ? signupDetails.photo.name : "Photo"
+                        }
+                        <input
+                            id="fileInput"
+                            type="file"
+                            name="photo"
+                            className="photo"
+                            onChange={changeHandler}
+                        />
 
+                    </label>
 
                     <input
                         type="password"
@@ -132,6 +137,9 @@ export default function Signup() {
                         value={signupDetails.password || ''}
                         onChange={changeHandler}
                     />
+
+                    <p className="required-message">All fields are required.</p>
+
                     <button className='signupBtn' type="submit">
                         {
                             loading ? 'Processing...' : 'Signup'
