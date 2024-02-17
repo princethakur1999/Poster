@@ -83,6 +83,14 @@ textarea {
     margin-top: 10px;
 }
 
+.required-message {
+    color: slategray; 
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-align: center;
+}
+
 .btn {
     width: 100%;
     height: 42px;

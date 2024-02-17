@@ -96,16 +96,16 @@ export default function Edit() {
 
             <input
                 type="text"
-                name="Name"
+                name="username"
                 onChange={changeHandler}
                 value={user.username}
-                placeholder="Username"
+                placeholder="Name"
             />
 
 
             <input
                 type="text"
-                name="Bio"
+                name="bio"
                 onChange={changeHandler}
                 value={user.bio}
                 placeholder="Bio"

@@ -128,6 +128,9 @@ export default function Creator() {
                         )
                     }
 
+                    <p className="required-message">All fields are required.</p>
+
+
 
                     <button className='btn'>
 

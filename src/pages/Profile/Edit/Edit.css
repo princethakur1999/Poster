@@ -4,8 +4,9 @@ form {
 }
 
 h2 {
-    text-align: center;
-    color: #333;
+    color: tomato;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 input {
