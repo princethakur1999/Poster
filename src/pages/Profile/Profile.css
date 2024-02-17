@@ -188,6 +188,12 @@
     border: 1px solid tomato;
 }
 
+
+.no-posts{
+    text-decoration: none;
+    color: grey;
+}
+
 @media only screen and (max-width: 1200px) {
 
     .my-profile {

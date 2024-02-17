@@ -11,10 +11,7 @@ export default function GlobalPost({ post, username }) {
     const formattedDate = postDate.toLocaleDateString('en-GB', {
         day: 'numeric',
         month: 'short',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
+        year: 'numeric'
     });
 
     return (

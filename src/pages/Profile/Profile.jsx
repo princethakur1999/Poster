@@ -185,7 +185,7 @@ export default function Profile() {
             }
 
             {
-                user && user.username ?
+               user && user.username ?
                     (
                         <div className='user'>
 
@@ -220,19 +220,19 @@ export default function Profile() {
                     )
                     :
                     (
-                        <p>Loading...</p>
+                        < div className='loader'></div>
                     )
             }
 
             <div className='my-posts'>
                 {
-                    user?.posts?.length > 0 ?
+                     user?.posts?.length > 0 ?
                         (
                             user.posts.map((post) => <Post key={post._id} post={post} username={user.username} />)
                         )
                         :
                         (
-                            <p className="no-posts-found">No posts found!</p>
+                          <p className="no-posts">No posts found!</p>
                         )
                 }
             </div>

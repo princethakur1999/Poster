@@ -24,6 +24,7 @@
 
 /* HTML: <div class="loader"></div> */
 .loader {
+    margin: 0 auto;
     width: 50px;
     aspect-ratio: 1;
     display: grid;
