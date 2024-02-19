@@ -1,65 +1,75 @@
+import './Online.css';
+
 import { useEffect, useState } from 'react';
 
-import './Online.css';
 import axios from 'axios';
-
 
 const BACKEND = import.meta.env.VITE_REACT_APP_API_URL;
 
 
+
+function OnlineUser({ user }) {
+
+    return (
+
+        <div className='user-cards'>
+
+            <div className="user-card">
+
+                <p className='online-sign'></p>
+
+                {
+                    user.photo && <img className="user-photo" src={user.photo} alt={user.name} />
+                }
+
+            </div>
+
+            <p className='user-name'>{user.username}</p>
+        </div>
+    );
+}
+
+
+
 export default function Online() {
 
-
-    const [onlineUsers, setOnlineUsers] = useState(null);
-
-
-    async function getOnlineUsers() {
-
-        try {
-
-            const response = await axios.get(`${BACKEND}/online-users`);
-
-            if (!response.data.success) {
-
-                throw new Error(response.data.message);
-            }
-
-            console.log(response.data.onlineUsers);
-
-            setOnlineUsers(response.data.onlineUsers);
-
-        } catch (e) {
-
-            console.log(e);
-        }
-    }
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
+
+        async function getOnlineUsers() {
+
+            try {
+
+                const response = await axios.get(`${BACKEND}/online-users`);
+
+                if (!response.data.success) {
+
+                    throw new Error(response.data.message);
+                }
+
+                console.log("AA RAHA HI: ",response.data.users);
+
+                setUsers(response.data.users);
+
+            } catch (e) {
+
+                console.log(e);
+            }
+        }
 
         getOnlineUsers();
 
     }, []);
 
-
     return (
 
         <div className="user-list">
 
-
             {
-                onlineUsers &&
-                onlineUsers.map((user, index) => (
+                users.map((user, index) => (
 
-                    <div className="user-card" key={index}>
-
-                        <p className='online-sign'></p>
-
-                        {
-                            user.photo &&
-                            <img className="user-photo" src={user.photo} alt={user.name} />
-                        }
-                    </div>
-
+                    <OnlineUser key={index} user={user} />
                 ))
             }
         </div>

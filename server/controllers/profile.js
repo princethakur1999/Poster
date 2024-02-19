@@ -108,7 +108,7 @@ export async function changePhoto(req, res) {
 
         if(check){
 
-            await findOneAndUpdate({email: user.email}, {$set:{photo: url}});
+            await Online.findOneAndUpdate({email: user.email}, {$set:{photo: url}});
 
         }
 
@@ -160,16 +160,19 @@ export async function editProfile(req, res) {
         }
 
 
-        const result = await User.findByIdAndUpdate(id, { $set: { username: username, bio: bio } }, { new: true });
+        const result1 = await User.findByIdAndUpdate(id, { $set: { username: username, bio: bio } }, { new: true });
 
-        console.log(result);
+        const result2 = await Online.findOneAndUpdate({email: user.email}, { $set: { username: username} }, { new: true });
+
+        console.log(result1);
+        console.log(result2);
 
 
         return res.status(200).json({
 
             success: true,
             message: `Successfully updated profile for ${user.username}`,
-            result
+            result1
         });
 
 

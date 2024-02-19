@@ -61,11 +61,12 @@ export async function getOnlineUsers(req, res){
     try{
 
 
-        const onlineUsers=await Online.find();
+        const onlineUsers = await Online.find({status:true});
 
         if(!onlineUsers){
 
             return  res.status(404).json({
+
                 success:false,
                 message: "No user is online"
             })
@@ -77,7 +78,7 @@ export async function getOnlineUsers(req, res){
 
         return res.status(200).json({
             success:true,
-            onlineUsers
+            users: onlineUsers
         })
 
 
