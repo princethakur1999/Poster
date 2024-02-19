@@ -8,7 +8,9 @@
     align-items: center;
     gap: 50px;
     background-color: white;
+    position: relative;
 }
+
 
 
 .top50 {

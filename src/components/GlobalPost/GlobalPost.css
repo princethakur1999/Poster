@@ -28,21 +28,33 @@
     border-top-right-radius: 10px;
 }
 
+.g-photo-name{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 50%;
+    text-decoration: none;
+}
+.g-photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 .g-username{
     font-weight: bold;
     margin: 0;
     font-size: 0.8rem;
-    background-color: white;
-    color: tomato;
+    color: white;
     padding: 5px;
-    width: 40%;
+    width: auto;
     cursor: pointer;
 }
 
 
 
 .g-date {
-    color: rgb(231, 231, 231);
+    color: white;
     font-weight: bold;
     margin: 0;
     font-size: 0.8rem;

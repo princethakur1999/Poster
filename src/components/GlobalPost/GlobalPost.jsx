@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function GlobalPost({ post, username }) {
+export default function GlobalPost({ post, username, photo }) {
 
     const postDate = new Date(post.date);
 
@@ -20,7 +20,13 @@ export default function GlobalPost({ post, username }) {
 
             <div className='ud'>
 
-                <Link to={`/user/${username}`} className='g-username' >{username}</Link>
+                <Link to={`/user/${username}`} className='g-photo-name'>
+
+                    <img src={photo} alt="user-photo" className='g-photo' />
+
+                    <span className='g-username' >{username} </span>
+
+                </Link>
 
                 <p className='g-date'>{formattedDate}</p>
 

@@ -1,5 +1,6 @@
 import User from './../models/user.js';
 import Otp from './../models/otp.js';
+import Online from './../models/online.js';
 
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -38,6 +39,7 @@ export async function otp(req, res) {
                 error: "User with this email already exists",
             })
         }
+
         const code = Math.floor(1000 + Math.random() * 9000);
 
         console.log('code', code);
@@ -238,6 +240,31 @@ export async function login(req, res) {
         // create me
         let me = { userId: user._id };
 
+        
+        const onlineUser=await Online.findOne({email: user.email});
+
+        if(!onlineUser){
+
+            const online = new Online({
+                username: user.username,
+                email: user.email,
+                photo: user.photo,
+                status: true
+            })
+    
+            const onlineStatus = await online.save();
+
+            console.log("NAYA USER KO ONLINE KR DIYA");
+        }
+
+        if(onlineUser){
+
+            await Online.findOneAndUpdate({email}, {$set:{"status": true}});
+
+            console.log("PURANA USER KO ONLINE KR DIYA");
+        }
+
+
 
         // Return token and me
         return res.status(200).json({
@@ -261,6 +288,51 @@ export async function login(req, res) {
 
 }
 
+
+export async function offline(req, res) {
+
+    try {
+
+        const { email } = req.params;
+
+        if (!email) {
+
+            return res.status(400).json({
+                success: false,
+                message: 'You must provide an email to be logged out'
+            });
+        }
+
+        const user = await Online.findOneAndUpdate({ email }, { $set: { "status": false } });
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: `User with the email "${email}" was not found`
+            })
+        }
+
+        console.log("User ko offline kr diya: ", user);
+
+        return res.status(200).json({
+
+            success: true,
+            message: `Offline operation done!`
+        });
+
+
+
+    } catch (e) {
+
+        console.error(`Error occured during logout : ${e}`);
+
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error!"
+        });
+
+    }
+}
 
 
 export async function sendOtpForEmailVerification(req, res) {

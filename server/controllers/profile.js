@@ -1,4 +1,5 @@
 import User from './../models/user.js';
+import Online from './../models/online.js';
 
 import { v2 as cloudinary } from 'cloudinary';
 
@@ -103,7 +104,13 @@ export async function changePhoto(req, res) {
             throw new Error("Failed to update user with the new photo URL.");
         }
 
+        const check= await Online.findOne({email: user.email});
 
+        if(check){
+
+            await findOneAndUpdate({email: user.email}, {$set:{photo: url}});
+
+        }
 
         return res.status(200).json({
 

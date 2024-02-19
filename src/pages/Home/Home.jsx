@@ -1,6 +1,7 @@
 import './Home.css';
 import GlobalPost from './../../components/GlobalPost/GlobalPost.jsx';
 import Login from './../../components/Login/Login.jsx';
+import Online from '../../components/Online/Online.jsx';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -66,6 +67,8 @@ export default function Home() {
 
         <div className='home'>
 
+            <Online  />
+
             {
                 loading ?
                     (
@@ -79,15 +82,15 @@ export default function Home() {
                             {
                                 posts?.map((post) => (
 
-                                    <GlobalPost key={post._id} post={post} username={post.user.username} />
+                                    <GlobalPost key={post._id} post={post} username={post.user.username} photo={post.user.photo} />
                                 ))
                             }
 
                             {
-                               !loading && 
-                               (
-                                posts && posts.length >= 0 ? null : <p>No posts found.</p>
-                               )
+                                !loading &&
+                                (
+                                    posts && posts.length >= 0 ? null : <p>No posts found.</p>
+                                )
                             }
 
                         </div>

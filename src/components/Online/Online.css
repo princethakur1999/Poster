@@ -1,0 +1,42 @@
+
+.user-list {
+
+    height: auto;
+    width: auto;
+    display: grid;
+    gap:20px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    background-color: tomato;
+    position: fixed;
+    left: 10px;
+    top: 100px;
+    border-radius: 40px;
+}
+
+
+.user-card {
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   font-size: 20px;
+   position: relative;
+   justify-self: center;
+}
+
+.user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.online-sign{
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: greenyellow;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}

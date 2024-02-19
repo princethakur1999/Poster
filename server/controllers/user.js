@@ -1,4 +1,6 @@
 import User from './../models/user.js';
+import Online from './../models/online.js';
+
 
 export async function userData(req, res) {
 
@@ -41,6 +43,46 @@ export async function userData(req, res) {
         })
 
     } catch (e) {
+
+        console.error(e);
+
+        return res.status(500).json({
+
+            success: false,
+            message: e.message || 'Server Error'
+        });
+
+    }
+}
+
+
+export async function getOnlineUsers(req, res){
+
+    try{
+
+
+        const onlineUsers=await Online.find();
+
+        if(!onlineUsers){
+
+            return  res.status(404).json({
+                success:false,
+                message: "No user is online"
+            })
+        }
+
+        console.log('online users: ', onlineUsers);
+
+
+
+        return res.status(200).json({
+            success:true,
+            onlineUsers
+        })
+
+
+    }catch(e){
+
 
         console.error(e);
 

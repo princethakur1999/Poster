@@ -93,17 +93,36 @@ export default function Profile() {
         }
     }
 
-    const logout = () => {
+    const logout = async () => {
 
-        dispatch(setToken(null));
+        try {
 
-        localStorage.removeItem('token');
-        localStorage.removeItem('me');
+            const response = await axios.post(`${BACKEND}/offline/${user.email}`);
 
-        navigate('/login');
+            if( !response.data.success ){
 
-        toast.success("Logout successful");
+                throw new Error('Server error');
+            }
+
+            dispatch(setToken(null));
+
+            localStorage.removeItem('token');
+            localStorage.removeItem('me');
+
+            navigate('/login');
+
+            toast.success("Logout successful");
+
+        } catch (e) {
+
+            alert(e.message || 'Server error');
+
+            console.log(e);
+
+        }
     };
+
+    
 
     async function getUser() {
 
@@ -167,13 +186,23 @@ export default function Profile() {
                             <IoIosClose className='close-btn' onClick={closePhotoChanger} />
                         </div>
 
-                        <input
-                            type="file"
-                            name='newPhoto'
-                            onChange={changeHandler}
-                            accept='image/*'
-                            className='selector'
-                        />
+
+
+
+                        <label htmlFor="fileInput" className="custom-file-input-label">
+                            {
+                                newPhoto ? newPhoto.name : "Choose new photo"
+                            }
+
+                            <input
+                                type="file"
+                                name='newPhoto'
+                                onChange={changeHandler}
+                                accept='image/*'
+                                className='selector'
+                            />
+
+                        </label>
 
                         <button className='change-button'>
                             {
@@ -185,7 +214,7 @@ export default function Profile() {
             }
 
             {
-               user && user.username ?
+                user && user.username ?
                     (
                         <div className='user'>
 
@@ -226,15 +255,15 @@ export default function Profile() {
 
             <div className='my-posts'>
                 {
-                     user?.posts?.length > 0 &&
-                        (
-                            user.posts.map((post) => <Post key={post._id} post={post} username={user.username} />)
-                        )
+                    user?.posts?.length > 0 &&
+                    (
+                        user.posts.map((post) => <Post key={post._id} post={post} username={user.username} />)
+                    )
                 }
 
                 {
-                   !loading && user?.posts?.length === 0 &&
-                   <p>No posts found.</p>
+                    !loading && user?.posts?.length === 0 &&
+                    <p>No posts found.</p>
                 }
 
             </div>
