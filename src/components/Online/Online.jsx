@@ -2,6 +2,8 @@ import './Online.css';
 
 import { useEffect, useState } from 'react';
 
+import { PiDotsNineBold } from "react-icons/pi";
+
 import axios from 'axios';
 
 const BACKEND = import.meta.env.VITE_REACT_APP_API_URL;
@@ -24,7 +26,7 @@ function OnlineUser({ user }) {
 
             </div>
 
-            <p className='user-name'>{user.username}</p>
+            {/* <p className='user-name'>{user.username}</p> */}
         </div>
     );
 }
@@ -33,7 +35,12 @@ function OnlineUser({ user }) {
 
 export default function Online() {
 
-    const [users, setUsers] = useState([]);
+
+    const [clicked, setClicked]=useState(false);
+
+    const [users, setUsers] = useState(false);
+
+
 
     useEffect(() => {
 
@@ -48,7 +55,7 @@ export default function Online() {
                     throw new Error(response.data.message);
                 }
 
-                console.log("AA RAHA HI: ",response.data.users);
+                console.log("AA RAHA HI: ", response.data.users);
 
                 setUsers(response.data.users);
 
@@ -62,16 +69,30 @@ export default function Online() {
 
     }, []);
 
-    return (
 
-        <div className="user-list">
 
-            {
-                users.map((user, index) => (
+    if (clicked) {
 
-                    <OnlineUser key={index} user={user} />
-                ))
-            }
-        </div>
-    );
+        return (
+
+            <div className="user-list"  onClick={(prev)=>setClicked(!clicked)}>
+
+                {
+                    users.map((user, index) => (
+
+                        <OnlineUser key={index} user={user} />
+                    ))
+                }
+            </div>
+        )
+
+    } else {
+
+        return (
+
+            <div className='clicked' onClick={(prev)=>setClicked(!clicked)} >
+                <PiDotsNineBold />
+            </div>
+        )
+    }
 }

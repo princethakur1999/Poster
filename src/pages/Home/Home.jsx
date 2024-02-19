@@ -78,7 +78,6 @@ export default function Home() {
                     (
                         <div className='top50'>
 
-
                             {
                                 posts?.map((post) => (
 
